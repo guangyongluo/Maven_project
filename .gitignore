@@ -1,14 +1,14 @@
 # eclipse user profile
-/.settings/
+.settings/
 
 # eclipse classpath
-/.classpath
+.classpath
 
 # all kinds of project files
 *.project
 
 # Maven compile folder
-/target/
+target/
 
 # Package Files #
 *.jar
