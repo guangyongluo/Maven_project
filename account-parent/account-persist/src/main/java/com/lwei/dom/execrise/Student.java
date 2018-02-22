@@ -36,5 +36,9 @@ public class Student {
 	public void setVbScore(int vbScore) {
 		this.vbScore = vbScore;
 	}
-    
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", javaScore=" + javaScore + ", oracelScore=" + oracelScore
+				+ ", vbScore=" + vbScore + "]";
+	}
 }
