@@ -13,7 +13,7 @@ public class SaxParseXML{
 		
 		SAXParser sp = spf.newSAXParser();
 		
-		sp.parse("src/main/resources/com/lwei/dom/test/classes.xml", new MyDefaultHandler2());
+		sp.parse("src/main/resources/com/lwei/dom/test/classes.xml", new MyDefaultHandler());
 	}
 }
 
