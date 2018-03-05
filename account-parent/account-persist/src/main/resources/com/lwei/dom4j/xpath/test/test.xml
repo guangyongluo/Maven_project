@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AAA>
+	<BBB id="b1">
+		<CCC>
+			<KKK>k2</KKK>
+		</CCC>
+		<CCC>
+			<KKK>k1</KKK>
+			<BBB/>
+		</CCC>
+	</BBB>
+	<BBB id="b2" />
+	<BBB name="bbb" />
+	<BBB />
+</AAA> 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GB2312"?> 
+
+<?xml-stylesheet type="text/xsl" href="students.xsl"?>
+
+<!DOCTYPE students[
+<!ELEMENT students (student+)>
+<!ELEMENT student (name,age)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ATTLIST student sn CDATA #REQUIRED>
+<!ENTITY name SYSTEM "src/main/resources/com/lwei/sax/test/names.xml">
+]>
+
+<students>
+    <student sn="01">
+        <name>张三</name>
+        <age>18</age>
+    </student>
+    
+    <student sn="02">
+        <name>&name;</name>
+        <age>20</age>
+    </student>
+</students>

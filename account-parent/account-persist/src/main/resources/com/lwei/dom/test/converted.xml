@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="students.xsl"?><students>
+    
+    
+    <student sn="02">
+        <name>李四</name>
+        <age>22</age>
+    </student>
+<student sn="03"><name>王五</name><age>19</age></student></students>

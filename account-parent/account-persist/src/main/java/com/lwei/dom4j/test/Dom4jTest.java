@@ -24,7 +24,8 @@ public class Dom4jTest {
         //list(doc.getRootElement());
         //read(doc);
         //add(doc);
-        del(doc);
+        //del(doc);
+        update(doc);
 	}
 	
     public static void read(Document doc) {
@@ -51,8 +52,8 @@ public class Dom4jTest {
 //		student.getParent().remove(student);
 		
 		Element student2 = (Element)doc.getRootElement().elements("学生").get(1);
-		Attribute attr = student2.element("姓名").attribute("别名");
-		student2.element("姓名").remove(attr);
+		Element name = student2.element("姓名");
+		name.remove(name.attribute("別名"));
 		
 		try {
 			FileOutputStream fos = new FileOutputStream("src/main/resources/com/lwei/dom4j/test/myClass.xml");
@@ -85,6 +86,37 @@ public class Dom4jTest {
 		student.add(studentIntro);
 		
 		doc.getRootElement().add(student);
+		
+		try {
+			FileOutputStream fos = new FileOutputStream("src/main/resources/com/lwei/dom4j/test/myClass.xml");
+			OutputFormat of = OutputFormat.createPrettyPrint();
+			XMLWriter writer = new XMLWriter(fos, of);
+			writer.write(doc);
+			writer.close();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void update(Document doc) {
+		
+		List<Element> students = doc.getRootElement().elements("学生");
+		for(int i = 0; i < students.size(); i++) {
+			Element age = students.get(i).element("年龄");
+			int ageNum = Integer.parseInt(age.getText()) + 3;
+			age.setText(Integer.toString(ageNum));
+		}
+	
+		Element student1 = students.get(0);
+		student1.element("姓名").addAttribute("别名", "青霞");
+		
+		Element student2 = students.get(1);
+		student2.element("姓名").addAttribute("别名", "及时雨");
 		
 		try {
 			FileOutputStream fos = new FileOutputStream("src/main/resources/com/lwei/dom4j/test/myClass.xml");
